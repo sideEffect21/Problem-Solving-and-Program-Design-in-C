@@ -52,6 +52,7 @@ int main() {
 
     printf("Menit untuk diinfus =>");
     scanf("%lf", &menit_diinfus);
+    
     menit_per_jam = (menit_diinfus / MENIT_KE_JAM);
     kecepatan_infus = (volume_yang_diinfus) / menit_per_jam;
 

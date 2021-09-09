@@ -48,10 +48,10 @@ int main() {
     double kecepatan_infus;
 
     printf("Volume obat yang akan diinfuskan (ml)=>");
-    scanf("%lf, &volume_yang_diinfus");
+    scanf("%lf", &volume_yang_diinfus);
 
     printf("Menit untuk diinfus =>");
-    scanf("%lf, &menit_diinfus");
+    scanf("%lf", &menit_diinfus);
     menit_per_jam = (menit_diinfus / MENIT_KE_JAM);
     kecepatan_infus = (volume_yang_diinfus) / menit_per_jam;
 

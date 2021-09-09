@@ -42,10 +42,10 @@
 #define MENIT_KE_JAM 60
 
 int main() {
-    double volume_yang_diinfus
-    double menit_diinfus
-    double menit_per_jam
-    double kecepatan_infus
+    double volume_yang_diinfus;
+    double menit_diinfus;
+    double menit_per_jam;
+    double kecepatan_infus;
 
     printf("Volume obat yang akan diinfuskan (ml)=>");
     scanf("%lf, &volume_yang_diinfus");

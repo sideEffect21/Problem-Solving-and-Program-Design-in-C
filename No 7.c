@@ -1,14 +1,5 @@
 /*  
 
-Tulis program yang menghitung berapa banyak BTU panas yang dikirim ke a
-rumah mengingat jumlah galon minyak yang terbakar dan efisiensi
-tungku minyak rumah. Asumsikan bahwa satu barel minyak (42 galon) memiliki energi
-setara dengan 5.800.000 BTU. (Catatan: Angka ini terlalu besar untuk direpresentasikan sebagai
-int pada beberapa komputer pribadi.) Untuk satu tes gunakan efisiensi 65%
-dan 100 galon minyak.
-
-
-
     Problem: 
             Dibutuhkan suatu program untuk menghitung banyak BTU panas yang dikirim ke rumah dengan menggunakan data 
             jumlah galon minyak yang terbakar dan efisiensinya. Di asumsikan 42 galon minyak memiliki energi
@@ -16,8 +7,8 @@ dan 100 galon minyak.
 
     Analysis:
             Untuk mendapatkan BTU panas yang dikirim ke tiap rumah dibutuhkan perhitungan jumlah BTU per galon minyak dengan 
-            mengalikannya dengan Asumsi 42 galon minyak setara dengan 5.800.000 BTU. kemudian kalikan dengan efisiensi yang digunakan. Hasil merupakan banyak BTU yang
-            dikirim tiap rumah sesuai dengan galon minyak yang terbakar dan efisiensinya 
+            mengalikannya dengan Asumsi 42 galon minyak setara dengan 5.800.000 BTU. kemudian kalikan dengan efisiensi yang digunakan. 
+            Hasil merupakan banyak BTU yang dikirim tiap rumah sesuai dengan galon minyak yang terbakar dan efisiensinya 
     
     Data Requirement:
             Problem Constant: BTU_PER_GALON (5800000 / 42)

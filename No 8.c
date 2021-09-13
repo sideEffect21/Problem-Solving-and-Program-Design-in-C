@@ -23,14 +23,15 @@
             
 
             Problem Inputs:
-            double jumlah_penduduk
+            double jumlah_penduduk                        // jumlah penduduk yang ingin dihitung penghematannya
 
             Problem Outputs:
-            double banyak_toilet
-            double air_toilet_lama
-            double air_toilet_baru
-            double air_yang_dihemat
-            double biaya_yang_dibutuhkan
+            double banyak_toilet                          // jumlah total toilet yang diperlukan 
+            double air_toilet_lama                        // volume per liter air yang digunakan oleh toilet model lama setiap harinya
+            double air_toilet_baru                        // volume per liter air yang digunakan oleh toilet baru (low flush) setiap harinya                         
+            double air_yang_dihemat                       // liter air yang dihemat setelah menggunakan toilet baru
+            double biaya_yang_dibutuhkan                  // Biaya yang digunakan untyuk melakukan penghematan (memasang toilet baru) untuk 
+                                                             seluruh penduduk.
 
             Relevant Formulas:
             banyak toilet = jumlah penduduk / ORANG

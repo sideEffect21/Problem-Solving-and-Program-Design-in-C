@@ -14,12 +14,12 @@
             Problem Constant: BTU_PER_GALON (5800000 / 42)
 
             Problem Inputs:
-            double jumlah_galon
-            double persentase_efisiensi
-            double btu_per_galon
+            double jumlah_galon             // jumlah galon minyak yang dibakar
+            double persentase_efisiensi     // persentase efisiensi yang digunakan
+            double btu_per_galon            // banyak BTU tiap galonnya
 
             Problem Outputs:
-            double hasil_btu_per_galon
+            double hasil_btu_per_galon      // hasil energi BTU setiap galon
 
             Relevant Formulas:
             Tiap galon menghasilkan BPU :Jumlah galon * BTU per galon

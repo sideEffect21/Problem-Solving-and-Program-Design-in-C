@@ -14,19 +14,19 @@
             Problem Constant: MENIT_KE_JAM 60
 
             Problem Inputs:
-            double volume_yang_diinfus
-            double menit_diinfus
+            double volume_yang_diinfus                      // volume obat yang diinfus (VTBI)                      
+            double menit_diinfus                            // jumlah menit yang harus diinfuskan
 
             Problem Outputs:
-            double menit_per_jam
-            double kecepatan_infus
+            double menit_per_jam                            // konversi menit ke jam
+            double kecepatan_infus                          // kecepatan obat di infuskan dalam ml/jam
 
             Relevant Formulas:
             konversi menit ke jam : Menit/60
             kecepatan pompa : volume yang diinfus / konversi ke jam
 */
 /*  Initial Algoritm:
-    1. Memasukkan data volume obat yang diinfus
+    1. Memasukkan data volume obat yang diinfus                                     
     2. Memasukkan data menit yang harus diinfus
     3. Mengkonversi menit yang harus diinfus ke jam
     4. Menghitung Kecepatan infus 

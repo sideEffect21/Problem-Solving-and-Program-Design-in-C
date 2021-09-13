@@ -70,7 +70,12 @@ int main() {
     printf("Banyak BTU yang dikirim: %lf BTU", hasil_btu_per_galon);
 
     return 0;
-
-
-
 }
+
+/*
+	Masukkan Jumlah Galon minyak = memakai 100 galon
+    Memasukkan persentse efisiensi = 65%
+
+	TESTING
+	Dalam kasus uji tersebut, dimasukkan data inputan berupa banyak galon, kemudian lebar tanah sepanjang 20 meter, dan harga tanah per hektarnya seharga Rp150.000. Output yang dikeluarkan sudah benar, yaitu Rp300.000. Luas tanah dalam meternya 200 m2. Kemudian dikonversikan menjadi hektar, yaitu 2 hektar. Lalu, harga totalnya didapat dari 2 hektar * Rp150.000, maka didapatkanlah Rp.300.000
+*/

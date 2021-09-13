@@ -44,10 +44,7 @@
             menit_per_jam = (menit_diinfus / MENIT_KE_JAM); kecepatan_infus = (volume_yang_diinfus) / menit_per_jam;
    Setelah itu maka ditampilkan VTBI dan kecepatn infus :
             printf("\nVTBI: %lf ml\n", volume_yang_diinfus); printf("Kecepatan Infus: %lf ml/jam", kecepatan_infus);
-
-   
-
-
+            
     */
 
 #include <stdio.h>

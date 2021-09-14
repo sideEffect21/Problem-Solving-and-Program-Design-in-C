@@ -49,18 +49,20 @@
     
    Implementation
    
-   Untuk mendapat data volume obat yang akan di infus dan menit yang diinfus, maka perlu Input dari user
-   sebagai berikut:
-            printf("Volume obat yang akan diinfuskan (ml)=>"); scanf("%lf", &volume_yang_diinfus);
-            printf("Menit untuk diinfus =>"); scanf("%lf", &menit_diinfus);
+   Untuk mendapat data jumlah penduduk maka diperlukan input menggunakn statment
+            printf("Masukkan jumlah penduduk =>");
+            scanf("%lf", &jumlah_penduduk);
+   Untuk menghitung jumlah toilet berdsarkan penduduk yang mennggunakan toilet :
+            banyak_toilet= jumlah_penduduk / 3 ;
     
-   Untuk mengkonversi menit ke jam dan menghitung volume perjamnya digunakan statment 
-            menit_per_jam = (menit_diinfus / MENIT_KE_JAM); kecepatan_infus = (volume_yang_diinfus) / menit_per_jam;
-   Setelah itu maka ditampilkan VTBI dan kecepatn infus :
-            printf("\nVTBI: %lf ml\n", volume_yang_diinfus); printf("Kecepatan Infus: %lf ml/jam", kecepatan_infus);
-
-   
-
+   Untuk menghitung liter air yang dipakai tiap toilet tiap hari :
+            air_toilet_lama = banyak_toilet * LITER_TOILET_LAMA * 14;
+            air_toilet_baru = banyak_toilet * LITER_TOILET_BARU * 14;
+   Untuk menghitung penghematan air per liter setiap hari :
+            air_yang_dihemat = air_toilet_lama - air_toilet_baru;
+   Setelah itu maka ditampilkan air yang dapat dihemat dan biaya yang harus digunakan :
+   printf("\nAir yang dihemat = %lf liter/hari ", air_yang_dihemat);
+   printf("\nBiaya yang dibutuhkan = $%lf ", BIAYA_TOILET * banyak_toilet);
 
     */
 

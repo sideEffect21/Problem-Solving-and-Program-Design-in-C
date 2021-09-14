@@ -1,3 +1,12 @@
+/*
+	Ditulis oleh :
+	Nrp ketua : 5025211228
+	Nama ketua : Muhammad Rifqi Fadhilah
+	Nrp anggota 1 : 5025211154
+	Nama anggota 1 : Thoriq Afif Habibi
+	Nrp anggota 2 : 5025211216
+	Nama anggota 2 : Akmal Nafis
+*/
 /*  Problem: 
             Perencana Kota Metro mengusulkan agar masyarakat menghemat pasokan airnya denga mengganti semua toilet masyarakat dengan model low flush 
             Dibutuhkan program untuk memperkirakan banyaknya volume air yang dihemat dan biaya yang dibutuhkan setelah mengganti toilet berdasarkan jumlah penduduk,

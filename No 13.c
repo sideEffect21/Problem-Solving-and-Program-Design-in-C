@@ -11,67 +11,58 @@
             SISWA_TIAP_BAGIAN 30
             
             Problem Inputs:
-            double peserta_terdaftar
+            int peserta_terdaftar
             
             Problem Outputs:
-            double bagian_diperlukan 
-            double siswa_yang tersisa
+            int bagian_diperlukan 
+            int siswa_yang_tersisa
          
             Relevant Formulas:
-            banyak toilet = jumlah penduduk / ORANG
-            air yang digunakan toilet = banyak toilet * LITER_TOILET * 14
-            air yang dihemat = air toilet lama - air toilet baru
-            biaya yang dibutuhkan = banyak toilet * biaya toilet
+            Bagian yang diperlukan = Jumlah siswa terdaftar / akomodasi siswa tiap bagian (30)
+            Siswa yang tersisa = Jumlah siswa terdaftar % akomodasi siswa tiap bagian (30)
 */
 /*  Initial Algoritm:
-    1. Memasukkan data jumlah penduduk
-    2. Menghitung jumlah toilet 
-    3. Menghitung penggunakan liter air per hari di toilet lama
-    4. Menghitung penggunakan liter air per hari di toilet baru
-    5. Menghitung air yang di hemat setelah menggunakan toilet baru
-    6. Menghitung biaya yang di butuhkan untuk melakukan penghematan 
+    1. Memasukkan data siswa yang terdaftar
+    2. Menghitung bagian kelompok yang diperlukan 
+    3. Menghitung banyak Siswa yang tersisa
+    4. menampilkan jumlah siswa yang terdaftar, bagian yang diperlukan, dan jumlah siswa yang tersisa
+   
     
    Implementation
    
-   Untuk mendapat data volume obat yang akan di infus dan menit yang diinfus, maka perlu Input dari user
+   Untuk mendapat data banyak siswa yang terdaftar, maka perlu Input dari user
    sebagai berikut:
-            printf("Volume obat yang akan diinfuskan (ml)=>"); scanf("%lf", &volume_yang_diinfus);
-            printf("Menit untuk diinfus =>"); scanf("%lf", &menit_diinfus);
+            printf("Enter the number of students enrolled: ");
+            scanf("%d", &peserta_terdaftar);;
     
-   Untuk mengkonversi menit ke jam dan menghitung volume perjamnya digunakan statment 
-            menit_per_jam = (menit_diinfus / MENIT_KE_JAM); kecepatan_infus = (volume_yang_diinfus) / menit_per_jam;
-   Setelah itu maka ditampilkan VTBI dan kecepatn infus :
-            printf("\nVTBI: %lf ml\n", volume_yang_diinfus); printf("Kecepatan Infus: %lf ml/jam", kecepatan_infus);
-   
+   Untuk menghitung bagian yang diperlukan dan jumlah siswa yang tersisa digunakan statment 
+            bagian_diperlukan = peserta_terdaftar/ SISWA_TIAP_BAGIAN ;
+            siswa_yang_tersisa = peserta_terdaftar % SISWA_TIAP_BAGIAN ;
+   Setelah itu maka ditampilkan jumlah siswa yang terdaftar, bagian yang diperlukan, dan jumlah siswa yang tersisa:
+            printf("Dengan %d Siswa terdaftar, Bagian yang diperlukan: %d\nSiswa yang tersisa: %d\n",
+            peserta_terdaftar ,bagian_diperlukan, siswa_yang_tersisa);
     */
 
 #include <stdio.h>
-#define FLUSH_PER_HARI 14 
-#define BIAYA_TOILET 150 
-#define LITER_TOILET_LAMA 15
-#define LITER_TOILET_BARU 2 
+#include <math.h>
+
+#define SISWA_TIAP_BAGIAN 30
 
 int main() {
-   double jumlah_penduduk;
-   double banyak_toilet;
-   double air_toilet_lama;
-   double air_toilet_baru;
-   double air_yang_dihemat;
-   double biaya_yang_dibutuhkan;
+  int peserta_terdaftar, bagian_diperlukan , siswa_yang_tersisa;
 
-    printf("Masukkan jumlah penduduk =>");
-    scanf("%lf", &jumlah_penduduk);
-    
-    banyak_toilet= jumlah_penduduk / 3 ;
-    air_toilet_lama = banyak_toilet * LITER_TOILET_LAMA * 14;
-    air_toilet_baru = banyak_toilet * LITER_TOILET_BARU * 14;
-    air_yang_dihemat = air_toilet_lama - air_toilet_baru;
-    
+  printf("Enter the number of students enrolled: ");
+  scanf("%d", &peserta_terdaftar);
 
-    printf("\nAir yang dihemat = %lf liter/hari ", air_yang_dihemat);
-    printf("\nBiaya yang dibutuhkan = $%lf ", BIAYA_TOILET * banyak_toilet);
+  bagian_diperlukan = peserta_terdaftar/ SISWA_TIAP_BAGIAN ;
+  siswa_yang_tersisa = peserta_terdaftar % SISWA_TIAP_BAGIAN ;
 
-    return 0;
-
+  printf("Dengan %d Siswa terdaftar, Bagian yang diperlukan: %d\nSiswa yang tersisa: %d\n",
+      peserta_terdaftar ,bagian_diperlukan, siswa_yang_tersisa);
+  
+  return 0;
 }
+
+
+
             

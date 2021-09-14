@@ -1,4 +1,12 @@
-
+/*
+	Ditulis oleh :
+	Nrp ketua : 5025211228
+	Nama ketua : Muhammad Rifqi Fadhilah
+	Nrp anggota 1 : 5025211154
+	Nama anggota 1 : Thoriq Afif Habibi
+	Nrp anggota 2 : 5025211216
+	Nama anggota 2 : Akmal Nafis
+*/
 /*  Problem: 
             Dibutuhkan program untuk memprediksi banyak seluruh bagian dari satu kelompok, dan membuat jumlah siswa yang terdaftar di dalam kelompok dengn asumsi 
             setiap bagian menampung 30 siswa. output yang dikeluarkan adalah jumlah siswa yang terdaftar, bagian yang diperlukan, dan jumlah siswa yang tersisa. 

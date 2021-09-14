@@ -18,12 +18,12 @@
     Data Requirement:
             SISWA_TIAP_BAGIAN 30
             
-            Problem Inputs:
-            int peserta_terdaftar
+            Problem Inputs:		
+            int peserta_terdaftar		// Bnyak siswa yang sudh terdaftar
             
             Problem Outputs:
-            int bagian_diperlukan 
-            int siswa_yang_tersisa
+            int bagian_diperlukan 		// Bagian yang diperlukan / yang dapat terbentuk
+            int siswa_yang_tersisa		// Banyak siswa yang tersisa (sisa kurang dari 30) 
          
             Relevant Formulas:
             Bagian yang diperlukan = Jumlah siswa terdaftar / akomodasi siswa tiap bagian (30)

@@ -61,7 +61,7 @@ int main() {
     printf("Banyak galon minyak =>");
     scanf("%lf", &jumlah_galon);
 
-    printf("Efisiensi (%) =>");
+    printf("Efisiensi (persentase) =>");
     scanf("%lf", &persentase_efisiensi);
     
     btu_per_galon = (jumlah_galon * BTU_PER_GALON);
@@ -77,5 +77,7 @@ int main() {
     Memasukkan persentse efisiensi = 65%
 
 	TESTING
-	Dalam kasus uji tersebut, dimasukkan data inputan berupa banyak galon, kemudian lebar tanah sepanjang 20 meter, dan harga tanah per hektarnya seharga Rp150.000. Output yang dikeluarkan sudah benar, yaitu Rp300.000. Luas tanah dalam meternya 200 m2. Kemudian dikonversikan menjadi hektar, yaitu 2 hektar. Lalu, harga totalnya didapat dari 2 hektar * Rp150.000, maka didapatkanlah Rp.300.000
+	Dalam kasus uji tersebut, dimasukkan data inputan berupa banyak galon dengan jumlah 100,
+kemudian persentase efisiensi 65%. Output yang dikeluarkan adalah 897.617.500 BTU
 */
+	

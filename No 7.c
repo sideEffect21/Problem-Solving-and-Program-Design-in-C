@@ -1,3 +1,12 @@
+/*
+	Ditulis oleh :
+	Nrp ketua : 5025211228
+	Nama ketua : Muhammad Rifqi Fadhilah
+	Nrp anggota 1 : 5025211154
+	Nama anggota 1 : Thoriq Afif Habibi
+	Nrp anggota 2 : 5025211216
+	Nama anggota 2 : Akmal Nafis
+*/
 /*  
 
     Problem: 

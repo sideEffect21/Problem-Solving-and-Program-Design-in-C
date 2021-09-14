@@ -33,7 +33,7 @@
    Untuk mendapat data banyak siswa yang terdaftar, maka perlu Input dari user
    sebagai berikut:
             printf("Enter the number of students enrolled: ");
-            scanf("%d", &peserta_terdaftar);;
+            scanf("%d", &peserta_terdaftar);
     
    Untuk menghitung bagian yang diperlukan dan jumlah siswa yang tersisa digunakan statment 
             bagian_diperlukan = peserta_terdaftar/ SISWA_TIAP_BAGIAN ;

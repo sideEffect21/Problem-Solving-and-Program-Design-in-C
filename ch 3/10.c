@@ -16,84 +16,77 @@ Fungsi fahrenheit harus mengubah suhu Celcius ke Fahrenheit.
 
 
 /*  Problem: 
-            Dibutuhkan program untuk memprediksi jumlah yang dipinjam dan pembayaran bulanan dan jumlah uang yang dipinjam, dengan memasukkan input 
-	    berupa harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran (biasanya 36, 48, atau 60)
+            Program mampu menghitung dan menampilkan suhu pada kedalaman ini dalam derajat Celcius dan 
+	    derajat Fahrenheit berdasarkan kedalaman bumi (km)
     Analysis:
-            Dengan menggunakan rumus yang tersedia dimana (P) adalah jumlah yang dipinjam, dan (i) tingkat bunga tahunan, (n) jumlah total pembayaran.
-	    maka kita dapat menemukan pembayaran. Dibutuhkan input harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran.
-	    Dibutuhkan output berupa jumlah uang yang dipinjam dan pembayaran bulanan.
+            untuk mengitung derajat celcius dan fahrenheit diperlukan data kedalam bumi. Setelah mendapatkan data
+	    kedalaman bumi maka, dibutukan vormula untuk mengkonversikan berapa derajat suhunya. dibutuhkan dua 
+	    fungsi masing masing derajat celcius dan fahrenheit. dan harus menampilkan dua hasil tersebut di output
             
     
     Data Requirement:
     
+  double celcius_at_depth(double depth) 		//fungsi untuk derajat celcius
+  
+  double fahrenheit(double celcius_degree) 		//fungsi untuk derajat fahrenheit
+  
             Problem Inputs:		
-            int total_num_of_payments	// jumlah pembayaran
-	    double purchase_price	// harga pembelian
-	    double down_payment		// uang muka
-	    double annual_interest_rate		// bunga tahunan
-	    double principle
-	 
+            double depth 				//jarak kedalaman bumi (km)
             
             Problem Outputs:
-	    
-	    double amount_borrowed	// uang yang dipinjam
-	    double monthly_payment       // pembayaran bulanan
+	    double celcius_degree;			//derajat celcius dari hasil konvert
+	
 	    
             Relevant Formulas:
-            payment(double P, double i, int n) {			//fungsi dari rumus untuk menghitung pembayaran
-	    return ((i * P) / (1 - pow(1 + i, -1 * (double)n))););
+            return (10 * depth) + 20;			//untuk menghitung derajat celcius sesuai kedalaman
+	    return (1.8 * celcius_degree) + 32;		//konversi dari celsius ke fahrenheit
 	    
-	    monthly_interest_rate = annual_interest_rate / 12;  //  bunga bulanan
-	    amount_borrowed = purchase_price - down_payment;   // menghitung uang yang dipinjam
-	
+
 */
 /*  Initial Algoritm:
     1. menampilkan apa yang harus diinput  
-    2. memasukkan input berupa harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran.
-    3. menghitung bunga bulanan
-    4. menghitung jumlah uanng yang dipinjam
-    5. menghitung pembayaran perbulan
-   
+    2. memasukkan jarak kedalaman bumi (km)
+    3. menghitung derajat celsius menggunakan kedalaman
+    4. mengkonversi derajat celsius dengan fahrenheit
+    5. menampilkan hasil derajat celcius dan fahrenheit
     
    Implementation
    
-   Untuk mendapat data banyak siswa yang terdaftar, maka perlu Input dari user
-   sebagai berikut:
-            printf("Enter the number of students enrolled: ");
-            scanf("%d", &peserta_terdaftar);
-    
-   Untuk menghitung bagian yang diperlukan dan jumlah siswa yang tersisa digunakan statment 
-            bagian_diperlukan = peserta_terdaftar/ SISWA_TIAP_BAGIAN ;
-            siswa_yang_tersisa = peserta_terdaftar % SISWA_TIAP_BAGIAN ;
-   Setelah itu maka ditampilkan jumlah siswa yang terdaftar, bagian yang diperlukan, dan jumlah siswa yang tersisa:
-            printf("Dengan %d Siswa terdaftar, Bagian yang diperlukan: %d\nSiswa yang tersisa: %d\n",
-            peserta_terdaftar ,bagian_diperlukan, siswa_yang_tersisa);
+dibentuk dua fungsi untuk formula
+  	 double celcius_at_depth(double depth) {
+	 return (10 * depth) + 20;}
+
+	 double fahrenheit(double celcius_degree) {
+  	 return (1.8 * celcius_degree) + 32;}
+   
+   Untuk mendapat data kedalaman bumi di gunakan statment 
+             printf("enter depth (km) > ");
+ 	scanf("%lf", &depth);
+
+   Untuk mendapatkan informasi derajat celcius sesuai kedalaman di gunakan 
+     celcius_degree = celcius_at_depth(depth);
+   Untuk menampikan output berupa derajat celcius dan fahrenheit digunakan statment
+   	 	printf("it's %.2lf°C or %.2lf°F on the depth of %.2lfkm\n",
+		celcius_degree, fahrenheit(celcius_degree), depth);
+
     */
 
 #include <stdio.h>
 
-// 1. create function celcius that requires depth as its argument
-// 2. calculate the temperature using the formula and return
-//    the result
 double celcius_at_depth(double depth) {
   return (10 * depth) + 20;
 }
 
-// 3. create fahrenheit formula that purpose is to convert the
-//    celcius temperature into fahrenheit, so it requires celcius
-//    as argument
 double fahrenheit(double celcius_degree) {
   return (1.8 * celcius_degree) + 32;
 }
 
-// 4. create a main function and prompt user to input depth in km
 int main() {
   double depth, celcius_degree;
 
   printf("enter depth (km) > ");
   scanf("%lf", &depth);
 
-  // 5. call celcius and fahrenheit function and print the result out
   celcius_degree = celcius_at_depth(depth);
 
   printf("it's %.2lf°C or %.2lf°F on the depth of %.2lfkm\n",

@@ -8,11 +8,6 @@
 	Nama anggota 2 : Akmal Nafis
 */
 
-Tulis program yang meminta pengguna untuk memasukkan jari-jari alas lingkaran
-kerucut dan tinggi kemiringan kerucut. Program harus menghitung total
-luas permukaan kerucut melingkar kanan dan menampilkannya kembali kepada pengguna. (Petunjuk: p akan
-digunakan dalam persamaan untuk menghitung luas permukaan total dan karenanya, Anda dapat:
-harus menggunakan nilai yang sesuai untuk itu.
 /*  Problem: 
             Dibutuhkan program untuk menghitung total luas permukaan kerucut melingkar kanan 
             dan menampilkannya kembali kepada pengguna.
@@ -35,7 +30,7 @@ harus menggunakan nilai yang sesuai untuk itu.
 	    double surface;				//luas permukaan kerucut
 	    
             Relevant Formulas:
-            area = PI * radius * (radius + slant_height);
+            area = PI * radius * (radius + slant_height);  //rumus untuk menghitung luas kerucut
 */
 /*  Initial Algoritm:
     1. menampilkan apa yang harus diinput  

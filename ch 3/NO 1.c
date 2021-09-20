@@ -8,20 +8,6 @@
 	Nama anggota 2 : Akmal Nafis
 */
 
-Anda telah menghemat $500 untuk digunakan sebagai uang muka mobil. Sebelum memulai
-belanja mobil Anda, Anda memutuskan untuk menulis program untuk membantu Anda mencari tahu apa
-pembayaran bulanan Anda akan, mengingat harga pembelian mobil, bulanan
-tingkat bunga, dan jangka waktu di mana Anda akan membayar kembali pinjaman. NS
-rumus untuk menghitung pembayaran Anda adalah
-
-P = pokok (jumlah yang Anda pinjam)
-i = tingkat bunga bulanan (112 dari tingkat tahunan)
-n = jumlah total pembayaran
-Program Anda harus meminta pengguna untuk harga pembelian, uang muka
-pembayaran, tingkat bunga tahunan, dan jumlah pembayaran (biasanya 36,
-48, atau 60). Ini kemudian harus menampilkan jumlah yang dipinjam dan pembayaran bulanan-
-termasuk tanda dolar dan dua tempat desimal.
-
 
 /*  Problem: 
             Dibutuhkan program untuk memprediksi jumlah yang dipinjam dan pembayaran bulanan dan jumlah uang yang dipinjam, dengan memasukkan input 
@@ -57,26 +43,45 @@ termasuk tanda dolar dan dua tempat desimal.
 */
 /*  Initial Algoritm:
     1. menampilkan apa yang harus diinput  
-    2. memasukkan input berupa harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran.
+    2. memasukkan input berupa harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran.
     3. menghitung bunga bulanan
-    4. menghitung jumlah uanng yang dipinjam
+    4. menghitung jumlah uang yang dipinjam
     5. menghitung pembayaran perbulan
+    6. menampilkan jumlah pinjaman dan pembayaran perbulan
    
     
-   Implementation
+ Implementation
    
-   Untuk mendapat data banyak siswa yang terdaftar, maka perlu Input dari user
-   sebagai berikut:
-            printf("Enter the number of students enrolled: ");
-            scanf("%d", &peserta_terdaftar);
+   Untuk menggunakan fungsi matematika pow() maka digunakan fungsi <math.h>
+   Membuat fungsi tambahan untuk menggunkan rumus payment(double P, double i, int n) {
+   return ((i * P) / (1 - pow(1 + i, -1 * (double)n)));
+   
+   didalam fungsi utama 
+   Untuk mendapat harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran,maka perlu statement sebagai berikut:
+  
+  printf("Enter purchase price ($) > ");
+  scanf("%lf", &purchase_price);
+
+  printf("Enter the amount of down payment ($) > ");
+  scanf("%lf", &down_payment);
+
+  printf("Enter annual interest rate > ");
+  scanf("%lf", &annual_interest_rate);
+
+  printf("Enter total number of payment (usually 36, 48, or 60) > ");
+  scanf("%d", &total_num_of_payments);
     
-   Untuk menghitung bagian yang diperlukan dan jumlah siswa yang tersisa digunakan statment 
-            bagian_diperlukan = peserta_terdaftar/ SISWA_TIAP_BAGIAN ;
-            siswa_yang_tersisa = peserta_terdaftar % SISWA_TIAP_BAGIAN ;
-   Setelah itu maka ditampilkan jumlah siswa yang terdaftar, bagian yang diperlukan, dan jumlah siswa yang tersisa:
-            printf("Dengan %d Siswa terdaftar, Bagian yang diperlukan: %d\nSiswa yang tersisa: %d\n",
-            peserta_terdaftar ,bagian_diperlukan, siswa_yang_tersisa);
+Untuk menghitung bunga bulanan digunakan statment:
+            double monthly_interest_rate = annual_interest_rate / 12;
+Untuk menghitung jumlah uang yang dipinjam digunakan statment:
+   	    amount_borrowed = purchase_price - down_payment
+Untuk menghitung jpembayaran perbulan digunakan statment:
+   	    double monthly_payment = payment(amount_borrowed, monthly_interest_rate, total_num_of_payments);
+Untuk menampilkan jumlah pinjaman dan pembayaran perbulan digunakan statement:
+        printf("The amount borrowed is $%.2lf\n", amount_borrowed);
+  	printf("And your monthly payment will be $%.2lf\n", monthly_payment);;
     */
+	
 #include <stdio.h>
 #include <math.h>
 

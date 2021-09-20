@@ -8,11 +8,7 @@
 	Nama anggota 2 : Akmal Nafis
 */
 
-Tulis program untuk mengambil kedalaman (dalam kilometer) di dalam bumi sebagai data input;
-menghitung dan menampilkan suhu pada kedalaman ini dalam derajat Celcius dan
-derajat Fahrenheit. Rumus yang relevan adalah Celsius = 10 (kedalaman) + 20 (Suhu Celcius pada kedalaman dalam km) Fahrenheit = 1,8 (Celcius) + 32 Sertakan dua fungsi dalam program Anda. Fungsi celsius_at_depth seharusnya
-menghitung dan mengembalikan suhu Celcius pada kedalaman yang diukur dalam kilometer.
-Fungsi fahrenheit harus mengubah suhu Celcius ke Fahrenheit.
+
 
 
 /*  Problem: 

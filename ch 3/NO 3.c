@@ -14,14 +14,11 @@ luas permukaan kerucut melingkar kanan dan menampilkannya kembali kepada penggun
 digunakan dalam persamaan untuk menghitung luas permukaan total dan karenanya, Anda dapat:
 harus menggunakan nilai yang sesuai untuk itu.
 /*  Problem: 
-            Dibutuhkan program untuk memprediksi jumlah yang dipinjam dan pembayaran bulanan dan jumlah uang yang dipinjam, dengan memasukkan input 
-	    berupa harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran (biasanya 36, 48, atau 60)
+            Dibutuhkan program untuk menghitung total luas permukaan kerucut melingkar 
+            dan menampilkannya kembali kepada pengguna.
     Analysis:
-            Dengan menggunakan rumus yang tersedia dimana (P) adalah jumlah yang dipinjam, dan (i) tingkat bunga tahunan, (n) jumlah total pembayaran.
-	    maka kita dapat menemukan pembayaran. Dibutuhkan input harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran.
-	    Dibutuhkan output berupa jumlah uang yang dipinjam dan pembayaran bulanan.
-            
-    
+            Untuk menghitung total luas permukaan kerucut melingkar maka diperlukan
+
     Data Requirement:
     
             Problem Inputs:		

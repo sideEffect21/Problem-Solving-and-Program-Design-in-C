@@ -9,8 +9,8 @@
 */
 Setelah mempelajari pertumbuhan penduduk Kota Gotham dalam dekade terakhir tahun
 Abad ke-20, kita telah memodelkan fungsi populasi Gotham sebagai
-P(t) =52.966 + 2.184t dimana t adalah tahun setelah tahun 1990, dan P adalah populasi dalam ribuan. Jadi, P(0) rep-
-membenci jumlah penduduk pada tahun 1990, yaitu 52.966 ribu orang. Menulis sebuah
+P(t) =52.966 + 2.184t dimana t adalah tahun setelah tahun 1990, dan P adalah populasi dalam ribuan. Jadi, P(0) 
+ME WAKILI jumlah penduduk pada tahun 1990, yaitu 52.966 ribu orang. Menulis sebuah
 program yang mendefinisikan fungsi bernama populasi yang memprediksi Gotham's
 populasi pada tahun yang diberikan sebagai argumen masukan. Buatlah program yang
 memanggil fungsi dan berinteraksi dengan pengguna sebagai berikut:
@@ -20,40 +20,41 @@ Prediksi penduduk Kota Gotham untuk tahun 2015 (dalam ribuan):
 
 
 /*  Problem: 
-            Dibutuhkan program untuk memprediksi jumlah yang dipinjam dan pembayaran bulanan dan jumlah uang yang dipinjam, dengan memasukkan input 
-	    berupa harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran (biasanya 36, 48, atau 60)
+            Dibutuhkan program untuk memprediksi jumlah populasi gotham pada tahun setelah 1990 dengan fungsi memodelkan fungsi populasi Gotham sebagai
+	    P(t) =52.966 + 2.184t dimana t adalah tahun setelah tahun 1990, dan P adalah populasi dalam ribuan. 
+	    P() mewakili jumlah penduduk pada tahun 1990 yaitu52.966.
     Analysis:
-            Dengan menggunakan rumus yang tersedia dimana (P) adalah jumlah yang dipinjam, dan (i) tingkat bunga tahunan, (n) jumlah total pembayaran.
-	    maka kita dapat menemukan pembayaran. Dibutuhkan input harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran.
-	    Dibutuhkan output berupa jumlah uang yang dipinjam dan pembayaran bulanan.
+            Dengan menggunakan rumus yang tersedia P(t) =52.966 + 2.184t dimana t adalah tahun setelah tahun 1990, 
+	    dan P adalah populasi dalam ribuan. P() mewakili jumlah penduduk pada tahun 1990 yaitu
+	    52.966. maka kita dapat memprediksi populasi setelah tahun 1990. diperlukan input berupa tahun yang akan diprediksi populasinya. m
+	    untuk mengetahui perbedaan tahun dan menghitung populasi yang ada.
             
     
     Data Requirement:
-    
-            Problem Inputs:		
-            int total_num_of_payments	// jumlah pembayaran
-	    double purchase_price	// harga pembelian
-	    double down_payment		// uang muka
-	    double annual_interest_rate		// bunga tahunan
-	    double principle
-	 
+ 		
+            const double population_rate = 2.184;		//konstanta tingkat populasi
+	    const initial_population = 52.966;			//konstanta populasi yang ada tahun 1990
+	    int initial_year = 1990;				//konnstanta tahun 1990
+            double current_population; 				//populasi saat ini
+	    int year_difference;				//perbedaan tahun
+	    
+	    
+            Problem Inputs:
+	    int year;						//tahun yang akan dihitung jumlah populasinya
             
             Problem Outputs:
-	    
-	    double amount_borrowed	// uang yang dipinjam
-	    double monthly_payment       // pembayaran bulanan
+	    population(year)					//populasi sesuai tahun tersebut
 	    
             Relevant Formulas:
-            payment(double P, double i, int n) {			//fungsi dari rumus untuk menghitung pembayaran
-	    return ((i * P) / (1 - pow(1 + i, -1 * (double)n))););
+            year_difference = year - initial_year;		//perbedaan tahun antara 1990
+	    current_population = initial_population + (population_rate * year_difference);		//menghitung populasi saat ini berdasar tahun
 	    
-	    monthly_interest_rate = annual_interest_rate / 12;  //  bunga bulanan
-	    amount_borrowed = purchase_price - down_payment;   // menghitung uang yang dipinjam
+
 	
 */
 /*  Initial Algoritm:
-    1. menampilkan apa yang harus diinput  
-    2. memasukkan input berupa harga harga pembelian, uang muka pembayaran, tingkat bunga tahunan, dan jumlah pembayaran.
+    1. menampilkan apa yang harus diinput  populasi setelah 1990
+    2. 
     3. menghitung bunga bulanan
     4. menghitung jumlah uanng yang dipinjam
     5. menghitung pembayaran perbulan

@@ -22,67 +22,94 @@ daripada titik didih mana pun dalam tabel, program akan menampilkan pesan Zat ti
 
 // Analysis
 /*
-	pertama, perlu di ketahui 
+pertama, perlu di ketahui tentang titik didik subtansi dalm tabel (derajat c)
+Water 100
+Mercury 357
+Copper 1187
+Silver 2193
+Gold 2660
+
+jika data yang diinput berada dalam rentang 5% dari titik didih zat maka akan menampilkan zat tersebut,
+namun jika lebih rendah dan lebih tinggi dari titik didih zat tersebut maka akan dikeluarkan output tidak 
+diketahui.
+
 */
 
 // Data Requirements
 /*
 	Problem inputs
-	int weekday			//total penggunaan Chatflow Wireless saat weekday
-	int night;			//total penggunaan Chatflow Wireless saat jam malam
-	int weekend;		//total penggunaan Chatflow Wireless saat weekend
+	double boiling_point			//dat titik didih 
 	
 	Problem constant
-	#define TAXES 0.0525 //Pajak
+	Water 100
+	Mercury 357
+	Copper 1187
+	Silver 2193
+	Gold 2660
 	
 	Problem outputs
-	double bill			//biaya setelah dan sebelum pajak
-	double avg				//rata2 biaya per menit
+	
+	int within_x_percent(double ref, double data, double x) //Menggunakan fungsi tersebut dengn sttement if else untuk mengeluarkan output
 */
 
 // Design
 /*
 	Initial algorithm
-	1. meminta data penggunaan telepon pada hari biasa, jam malam, dan akhir pekan
-	2. menghitung total biaya sebelum terkena pajak
-	3. menghitung rata-rata biaya per menit
-	4. menghitung total biaya setelah terkena pajak
+	1. meminta data titik didih yang di observsi
+	2. menghitung berpa persentase 
+	3. mengecek apakah data tersebut berada dlam jangkauan konstanta benar atu slaah
+	4. mengeluarkan sttement sesuai kondisi
 	
-	Refinement
-	2.1 Jika penggunaan pada hari biasa kurang dari 600 menit, 
-	    total biaya = $39.99
-	2.2 Jika penggunaan pada hari biasa lebih dari 600 menit,
-		total biaya = 39.99 + (menit pada hari biasa - 600) * 0.4
 */
 
 // Implementations
 /*
-	Pertama, kita perlu meminta data penggunaan telepon dengan memberi statement
-	printf("Enter the number of weekday minute>> ");
-	scanf("%d", &weekday);
-	printf("Enter the number of night minute>> ");
-	scanf("%d", &night);
-	printf("Enter the number of weekend minute>> ");
-	scanf("%d", &weekend);
+	Pertama, kita perlu meminta data berapa derajat titik didih yang diobservasi
+	printf("\n Enter observed boiling point of a substance - ");
+	scanf("%lf", &boiling_point);
 	
-	Setelah itu, total biaya dan rata-rata per menit sebelum terkena pajak bisa
-	didapatkan dengan
-	if(weekday <= 600)
-		bill = 39.99;
-	else if (weekday > 600)
-		bill = 39.99 + (weekday - 600) * 0.4;
-	avg = bill / (weekday + night + weekend);
-
-	Karena terdapat pajak sebesar 5.25%, total biaya perlu diolah kembali dengan
-	menggunakan statement sebagai berikut :
-	bill = bill * (1 - TAXES);
+	Setelah itu, kita perlu mendefinikan fungsi untuk sebagai parameter referensi 
+	nilai referensi, data nilai data, dan nilai persentase.
+	int within_x_percent(double ref, double data, double x)
+	if(data >= ((ref - ((x/100) * ref))) && (data <= (ref + ((x/100) * ref))))
+		return 1;
+		
+	//jika data berada dalam x% dari ref—yaitu, 
+	(ref – x%* ref) data (ref + x% * ref). Kalau tidak, within_x_percent akan kembali nol, yang berarti salah. 
 	
-	Pada bagian terakhir, kita tinggal menampilkan data-data yang telah diperoleh
-	dengan memberi statement
-	printf("Pretax bill : $%lf \nAverage cost : %lf per minute", bill, avg);
-	printf("\nTaxes : 0.0525 \nTotal bill : %lf", bill);
+	//kemudian untuk mengecek benar  bahwa titik didih tersebut merupakan suatu zat maka di gunkan statement kondisi,
+	menampikaan zt jika benar.
+	sebagai berikut 
+	
+	if((within_x_percent(100, boiling_point, 5) == 1))
+	{
+		printf("\n Water\n");
+	}
+	else if((within_x_percent(357, boiling_point, 5) == 1))
+	{
+		printf("\n Mercury\n");
+	}
+	else if((within_x_percent(1187, boiling_point, 5) == 1))
+	{
+		printf("\n Copper\n");
+	}
+	else if((within_x_percent(2193, boiling_point, 5) == 1))
+	{
+		printf("\n Silver\n");
+	}
+	else if((within_x_percent(2660, boiling_point, 5) == 1))
+	{
+		printf("\n Gold\n");
+	}
+	
+	Untuk menyatakan bhw zat terzebut tidak memenuhi katergori titik didih zat dalam tabel
+	digunakan statemen 
+	else
+		printf("\n Substance unknown\n");
+		}
+		
 */
-#include "stdio.h"
+#include <stdio.h>
 int within_x_percent(double, double, double);
 void main()
 {

@@ -38,7 +38,7 @@ diketahui.
 // Data Requirements
 /*
 	Problem inputs
-	double boiling_point			//dat titik didih 
+	double boiling_point			//data titik didih 
 	
 	Problem constant
 	Water 100
@@ -49,7 +49,7 @@ diketahui.
 	
 	Problem outputs
 	
-	int within_x_percent(double ref, double data, double x) //Menggunakan fungsi tersebut dengn sttement if else untuk mengeluarkan output
+	int within_x_percent(double ref, double data, double x) //Menggunakan fungsi tersebut dengan sttement if else untuk mengeluarkan output
 */
 
 // Design
@@ -57,8 +57,8 @@ diketahui.
 	Initial algorithm
 	1. meminta data titik didih yang di observsi
 	2. menghitung berpa persentase 
-	3. mengecek apakah data tersebut berada dlam jangkauan konstanta benar atu slaah
-	4. mengeluarkan sttement sesuai kondisi
+	3. mengecek apakah data tersebut berada dlam jangkauan konstanta benar atu salah
+	4. mengeluarkan statement sesuai kondisi
 	
 */
 

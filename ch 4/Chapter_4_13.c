@@ -49,7 +49,7 @@ diketahui.
 	
 	Problem outputs
 	
-	int within_x_percent(double ref, double data, double x) //Menggunakan fungsi tersebut dengan sttement if else untuk mengeluarkan output
+	int within_x_percent(double ref, double data, double x) //Menggunakan fungsi tersebut dengan statement if else untuk mengeluarkan output
 	berupa zat jika benar
 	
 */
@@ -70,7 +70,7 @@ diketahui.
 	printf("\n Enter observed boiling point of a substance - ");
 	scanf("%lf", &boiling_point);
 	
-	Setelah itu, kita perlu mendefinikan fungsi untuk sebagai parameter referensi 
+	Setelah itu, kita perlu mendefinisikan fungsi untuk sebagai parameter referensi 
 	nilai referensi, data nilai data, dan nilai persentase.
 	int within_x_percent(double ref, double data, double x)
 	if(data >= ((ref - ((x/100) * ref))) && (data <= (ref + ((x/100) * ref))))
@@ -83,23 +83,23 @@ diketahui.
 	menampikaan zt jika benar.
 	sebagai berikut 
 	
-	if((within_x_percent(100, boiling_point, 5) == 1))
+	if((within_x_percent(100, boiling_point, 5) == 1))		// kondisi untuk air
 	{
 		printf("\n Water\n");
 	}
-	else if((within_x_percent(357, boiling_point, 5) == 1))
+	else if((within_x_percent(357, boiling_point, 5) == 1))		//kondisi untuk Mercury
 	{
 		printf("\n Mercury\n");
 	}
-	else if((within_x_percent(1187, boiling_point, 5) == 1))
+	else if((within_x_percent(1187, boiling_point, 5) == 1))	//kondisi untuk Copper
 	{
 		printf("\n Copper\n");
 	}
-	else if((within_x_percent(2193, boiling_point, 5) == 1))
+	else if((within_x_percent(2193, boiling_point, 5) == 1))	//kondisi untuk silver
 	{
 		printf("\n Silver\n");
 	}
-	else if((within_x_percent(2660, boiling_point, 5) == 1))
+	else if((within_x_percent(2660, boiling_point, 5) == 1))	//kondisi untuk emas
 	{
 		printf("\n Gold\n");
 	}

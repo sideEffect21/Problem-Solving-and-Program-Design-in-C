@@ -50,6 +50,8 @@ diketahui.
 	Problem outputs
 	
 	int within_x_percent(double ref, double data, double x) //Menggunakan fungsi tersebut dengan sttement if else untuk mengeluarkan output
+	berupa zat jika benar
+	
 */
 
 // Design

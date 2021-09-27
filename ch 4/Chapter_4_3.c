@@ -42,6 +42,7 @@ program C yang mendemonstrasikan evaluasi hubung singkat C dari
 	1. meminta data input berupa char T atau F 
 	2. mengecek kedua input, menampilkan maasing masing statementnya 
 	3. mengecek bhwa kedua input tersebut menggunakan fungsi && ||
+	4. mengeluarkan output fun2 executed,Test of && complete, Test of || complete
 
 // Implementations
 /*

@@ -37,6 +37,9 @@ diikuti dengan nilai transaksi
 	
 	Problem outputs
 	final_inventory	//output yang keluar yang tersedia
+	brand_id
+	inventory
+
 */
 
 // Design

@@ -11,102 +11,104 @@
 
 // Problem
 /*
-Klub Kesadaran Lingkungan BigCorp International mengusulkan
-bahwa perusahaan mensubsidi $0,08 per penumpang-kilometer perjalanan
-biaya karyawan yang membentuk carpools yang memenuhi minimum yang ditentukan
-efisiensi pembangkit. Efisiensi penumpang P (dalam penumpang-kilometer per liter) adalah
-didefinisikan sebagai
-P 5ns
-aku
- di mana n adalah jumlah penumpang, s adalah jarak yang ditempuh dalam kilometer,
-dan l adalah jumlah liter bensin yang digunakan. Tulis program yang memproses file input data pada carpool yang ada
-(carpool.txt), membuat file output effic.txt yang berisi tabel semua
-carpools yang memenuhi minimum efisiensi penumpang. File input dimulai
-dengan angka yang merupakan efisiensi penumpang minimum. Setiap carpool diwakili
-dibenci oleh baris data yang berisi tiga angka: jumlah orang di
-carpool, total jarak perjalanan per lima hari seminggu, dan jumlah
-liter bensin yang dikonsumsi dalam seminggu perjalanan. File data diakhiri dengan
-garis nol. Tulis hasil Anda dengan format ini:
+
+Misalkan Anda memiliki distributor bir yang menjual Piels (nomor ID 1), Coors
+(Nomor ID 2), Bud (Nomor ID 3), dan Iron City (Nomor ID 4) berdasarkan kasus.
+Tulis program untuk
+A. Dapatkan inventaris kasus untuk setiap merek untuk awal minggu.
+B. Memproses semua catatan penjualan dan pembelian mingguan untuk setiap merek.
+C. Menampilkan inventaris akhir. Setiap transaksi akan terdiri dari dua item data. Item pertama akan menjadi merek
 
 */
 
 // Analysis
 /*
-untuk membuat program tersebut kita harus mengecek angka tersebut dengan pembagi nol
-kemudian hitung sisa pembagi lama dibagi sisanya ditemukan. ulangi proses ini sampai sisanya nol
+dalam kasus ini sudah diketahui bahwa untuk menjawab pertanyaan a,b,dan c
+Nomor ID (bilangan bulat). Yang kedua adalah jumlah yang dibeli (positif
+nilai integer) atau jumlah yang terjual (nilai integer negatif). 
+Entri data Anda harus dimulai dengan empat nilai  mewakili inventaris kasus, 
+diikuti dengan nilai transaksi
+
 	
 // Data Requirements
 /*
-	Problem inputs
-	int a, b;			//input angka
-	
+	brand_id	//input brand id number dan banyak
+	amount
 	
 	Problem outputs
-int	r, g;		//otput yang keluar
-	
+	final_inventory	//output yang keluar yang tersedia
 */
 
 // Design
 /*
 	Initial algorithm
-	1. meminta 2 data angka 
-	2. mengecek kedua input 
-	3. mengecek apakah bilangan tersebut dibagi sisanya nol atau tidak
-	4. jika tidak program tersebut akan mengulang dan membagi sampai nol
+	1. meminta input berupa ID brand hingga sampai dengan 4
+	2. mengecek ketersediaan beer sesuai id dalam inventory
+	3. menampilkan inventaris sesuai id brand 
+	4. menampilkan penjualan 
+	5. Menampilkan invontaris akhir 
 // Implementations
 /*
-	Pertama, kita perlu meminta input berupa input
-  printf("\ngcd(a, b)");
-	printf("\nEnter a - ");
-	scanf("%d", &a);
-	printf("\nEnter b - ");
-	scanf("%d", &b);
-  
-	Setelah itu, menggunakan staement if untuk mengecek angkanya
-	if((a % b) == 0)
-		g = b;
+	Pertama, ID brand yang tersedia karena hanya sampai 4 maka dilakukan perulangan 
+	while(i < 4)
+	{
+		temp = brand_id;
+		printf("\nEnter Brand ID Number - ");
+		scanf("%d", &brand_id);				// mendapatkan input ID beer yang akan dicari
 	
-jika bernulai false maka akan dilakukan perulangan
- else
-	{	
-		r = a % b;
-		while(r != 0)
-		{
-			a = b;
-			b = r;
-			r = a % b;
-		}
-		g = b;
-	}
-  
-  untuk menampilkan hasil 
-  printf("\ngcd(a, b) - %d\n", g);
-}
+  	dilakukan pengecekan bila bernilai benar
+	if(temp != brand_id)
+			{
+		printf("\nEnter Amount Purchased/Sold - ");
+		scanf("%d", &amount);					// untuk mendapatkan banyak penjualan
+		final_inventory += process_sales(brand_id, amount);	// memprosesnya ke dalam inventori akhir
+		i++;
+			}
+jika tidak sesuai 
+else
+				printf("\nAlready Entered enter a different brand ID\n"); //kempali ke input kan ID
+
+dilakukan perhitungan didalam inventaris dimana beer id itu sesuai 
+
+int process_sales(int brand_id, int amount)
+{
+	int inventory = 0, i; 
+	inventory += amount; //inventaris akan bertambah sesuai banyaknya permintaan
+	
+	printf("\nInventory for ID Number %d - %d\n", brand_id, inventory); //menampilkan inventaris yang sesuai dengan id
+	
+
 	*/
 #include "stdio.h"
-#define SUBS 0.08
-void print_chart(int, double, double, double, double);
+int process_sales(int, int);
 void main()
 {
-	double efficiency, gasoline, distance, subs;
-	int passengers, input_status;
-	
-	printf("%5cCARPOOLS MEETING MINIMUM PASSENGER EFFICIENCY OF 25 PASSENGER KM/L", ' ');
-	
-	printf("\nPassengers %3c Weekly Commute (km) %3c Gasoline Consumption(L) %3c Efficiency (pass km/L) %3c Weekly Subsidy($)", ' ', ' ', ' ', ' ');
-	
-	while((input_status = scanf("%d%lf%lf", &passengers, &distance, &gasoline)) != EOF)
-	{
-		if(passengers == 0)
-			break;
-		efficiency = (passengers * distance) / gasoline;
-		subs = passengers * distance * SUBS;
-		print_chart(passengers, efficiency, gasoline, distance, subs);
-	}
-	
+	int i = 0, brand_id, amount, final_inventory = 0, temp;
+
+		while(i < 4)
+		{
+			temp = brand_id;
+			printf("\nEnter Brand ID Number - ");
+			scanf("%d", &brand_id);
+			if(temp != brand_id)
+			{
+				printf("\nEnter Amount Purchased/Sold - ");
+				scanf("%d", &amount);
+				final_inventory += process_sales(brand_id, amount);
+				i++;
+			}
+			else
+				printf("\nAlready Entered enter a different brand ID\n");
+			}
+	printf("\nFinal Inventory - %d \n", final_inventory);
 }
 
-void print_chart(int passengers, double efficiency, double gasoline, double distance, double subs)
+int process_sales(int brand_id, int amount)
 {
-	printf("\n%d %15c %.2f %18c %.2f %20c %.2f %20c %.2f", passengers, ' ', distance, ' ', gasoline, ' ', efficiency, ' ', subs);
+	int inventory = 0, i;
+	inventory += amount;
+	
+	printf("\nInventory for ID Number %d - %d\n", brand_id, inventory);
+	
+	return inventory;
 }

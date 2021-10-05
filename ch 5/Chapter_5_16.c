@@ -11,102 +11,107 @@
 
 // Problem
 /*
-Klub Kesadaran Lingkungan BigCorp International mengusulkan
-bahwa perusahaan mensubsidi $0,08 per penumpang-kilometer perjalanan
-biaya karyawan yang membentuk carpools yang memenuhi minimum yang ditentukan
-efisiensi pembangkit. Efisiensi penumpang P (dalam penumpang-kilometer per liter) adalah
-didefinisikan sebagai
-P 5ns
-aku
- di mana n adalah jumlah penumpang, s adalah jarak yang ditempuh dalam kilometer,
-dan l adalah jumlah liter bensin yang digunakan. Tulis program yang memproses file input data pada carpool yang ada
-(carpool.txt), membuat file output effic.txt yang berisi tabel semua
-carpools yang memenuhi minimum efisiensi penumpang. File input dimulai
-dengan angka yang merupakan efisiensi penumpang minimum. Setiap carpool diwakili
-dibenci oleh baris data yang berisi tiga angka: jumlah orang di
-carpool, total jarak perjalanan per lima hari seminggu, dan jumlah
-liter bensin yang dikonsumsi dalam seminggu perjalanan. File data diakhiri dengan
-garis nol. Tulis hasil Anda dengan format ini:
 
+Tulis program yang menggunakan metode Newton untuk mendekati akar ke-n
+dari angka sampai enam tempat desimal.jika x^n = c, Mencari akar dari
+persamaan kedua akan memberi n root c
 */
 
 // Analysis
 /*
-untuk membuat program tersebut kita harus mengecek angka tersebut dengan pembagi nol
-kemudian hitung sisa pembagi lama dibagi sisanya ditemukan. ulangi proses ini sampai sisanya nol
+untuk membuat program tberjalan maka kita harus melakukan sesuai dalam rumus yang tersedia 
 	
 // Data Requirements
 /*
 	Problem inputs
-	int a, b;			//input angka
-	
-	
+double n, c,	//input angka
+
 	Problem outputs
-int	r, g;		//otput yang keluar
+double x0,x1, i, temp;	//otput yang keluar dan digunakan dalam memproses angka
 	
+	relevant formula
+x^n = c, x^n − c = 0
 */
 
 // Design
 /*
 	Initial algorithm
-	1. meminta 2 data angka 
-	2. mengecek kedua input 
-	3. mengecek apakah bilangan tersebut dibagi sisanya nol atau tidak
-	4. jika tidak program tersebut akan mengulang dan membagi sampai nol
+	1. meminta 2 data angka input
+	2. menghitung sesuai rumus dalam fungsi 
+	3. menghitung kira kira hasil 
+	4. melakukan looping paa hasil
+	5. menampilkan output 
 // Implementations
 /*
-	Pertama, kita perlu meminta input berupa input
-  printf("\ngcd(a, b)");
-	printf("\nEnter a - ");
-	scanf("%d", &a);
-	printf("\nEnter b - ");
-	scanf("%d", &b);
-  
-	Setelah itu, menggunakan staement if untuk mengecek angkanya
-	if((a % b) == 0)
-		g = b;
+Digunakan fungsi untuk menyimpan rumus rumus 
+double next_approx(double temp, double n, double c) 		//kira kira hasil derivative
+{
+	double next_approx = temp - (func(temp, n, c) / derivative(temp, n));
+	return next_approx;
+}
+
+double func(double x, double n, double c)  //x^n − c 
+{
+	return ((pow(x, n)) - c);
+}
+
+double derivative(double x, double n) 
+{
+	return (x * pow(x, n - 1));
+}
+
 	
-jika bernulai false maka akan dilakukan perulangan
- else
-	{	
-		r = a % b;
-		while(r != 0)
-		{
-			a = b;
-			b = r;
-			r = a % b;
-		}
-		g = b;
+meminta input angka 
+scanf("%lf", &c);
+scanf("%lf", &n);
+
+mlakukan perhitungan ssesuai formula dalam fungsi 
+x0 = c / 2;
+x1 = x0 - (func(x0, n, c) / derivative(x0, n));
+
+dilakukan looping untuk menampilkan hasil
+for(i = 0; i < 100; i++)
+	{
+		printf("\n%.6f \n", x1);
+		x1 = next_approx(x1, n, c);
 	}
-  
-  untuk menampilkan hasil 
-  printf("\ngcd(a, b) - %d\n", g);
 }
 	*/
 #include "stdio.h"
-#define SUBS 0.08
-void print_chart(int, double, double, double, double);
+#include "math.h"
+double next_approx(double, double, double);
+double func(double, double, double);
+double derivative(double, double);
 void main()
 {
-	double efficiency, gasoline, distance, subs;
-	int passengers, input_status;
+	double x0, n, c, x1, i, temp;
+	printf("\nEnter c - ");
+	scanf("%lf", &c);
+	printf("\nEnter n - ");
+	scanf("%lf", &n);
 	
-	printf("%5cCARPOOLS MEETING MINIMUM PASSENGER EFFICIENCY OF 25 PASSENGER KM/L", ' ');
+	x0 = c / 2;
+	x1 = x0 - (func(x0, n, c) / derivative(x0, n));
 	
-	printf("\nPassengers %3c Weekly Commute (km) %3c Gasoline Consumption(L) %3c Efficiency (pass km/L) %3c Weekly Subsidy($)", ' ', ' ', ' ', ' ');
-	
-	while((input_status = scanf("%d%lf%lf", &passengers, &distance, &gasoline)) != EOF)
+	for(i = 0; i < 100; i++)
 	{
-		if(passengers == 0)
-			break;
-		efficiency = (passengers * distance) / gasoline;
-		subs = passengers * distance * SUBS;
-		print_chart(passengers, efficiency, gasoline, distance, subs);
+		printf("\n%.6f \n", x1);
+		x1 = next_approx(x1, n, c);
 	}
-	
 }
 
-void print_chart(int passengers, double efficiency, double gasoline, double distance, double subs)
+double next_approx(double temp, double n, double c)
 {
-	printf("\n%d %15c %.2f %18c %.2f %20c %.2f %20c %.2f", passengers, ' ', distance, ' ', gasoline, ' ', efficiency, ' ', subs);
+	double next_approx = temp - (func(temp, n, c) / derivative(temp, n));
+	return next_approx;
+}
+
+double func(double x, double n, double c)
+{
+	return ((pow(x, n)) - c);
+}
+
+double derivative(double x, double n)
+{
+	return (x * pow(x, n - 1));
 }

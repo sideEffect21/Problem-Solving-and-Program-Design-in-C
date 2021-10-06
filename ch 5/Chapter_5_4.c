@@ -11,102 +11,57 @@
 
 // Problem
 /*
-Buatlah program untuk menghitung banyaknya bilangan ganjil dan bilangan
+-Buatlah program untuk mengecek bilangan ganjil dan bilangan
 nilai genap dalam kumpulan N angka. 
-Ubah program Anda untuk menghitung dan menampilkan masing-masing berikut dalam sebuah koleksi
-pemilihan N angka: jumlah nilai ganjil, jumlah nilai genap, 
-kuadrat dari jumlah nilai ganjil, dan kuadrat dari jumlah nilai genap
-
  
 */
 
 // Analysis
-/*
-	Untuk mendemonstrasikan evaluasi hubung singkat C dari && dan || operator.
-	Input berupa char "T" DAN "F"sesuai program jika pengguna menginput nilai T maka return 1
-	jika dinput nilai F maka return 0 di fungsi int fun1() Fungsi utama harus mencakup dua pernyataan kondisional: satu yang menampilkan
-	“Test of && complete” jika && dipanggil fungsi ke fun1 dan funTesting ||Uji || selesai” jika
-	|| panggilan fungsi ke fun1 dan fun2 benar karena adanya return 1. Sebelum syarat pertama
-	pernyataan, tampilkan "Test of &&," dan sebelum input kedua, tampilkan "Testing ||."
+/* untuk mengecek bilangan tersebut maka digunakan statement if 
+dan digunakan kondisi for agar perulangan pertanyaan tidak berhenti
 	
 // Data Requirements
 /*
 	Problem inputs
-	char input;			//input karakter "T" dan "F"
+	n;			//input banyak angka yang akan dihitung 
 	
 	
 	Problem outputs
-	(fun1() || fun2()) 		//kondisi untuk mengecek nilai benear atau salah
-	(fun1() && fun2()
+	n is odd  			//bilangan genap atau genjil
+	n is even 
 */
 
 // Design
 /*
 	Initial algorithm
-	1. meminta data input berupa char T atau F 
-	2. mengecek kedua input, menampilkan maasing masing statementnya 
-	3. mengecek bhwa kedua input tersebut menggunakan fungsi && ||
-	4. mengeluarkan output fun2 executed,Test of && complete, Test of || complete
+	1. meminta data input berupa angka  
+	2. mengecek angka tersebut genap atau ganjil 
+	3. menampilkan output berupa odd tau even
+	4. mengulang kembali jika statement benar
+
 // Implementations
 /*
-	Pertama, kita perlu meminta input berupa T atau F dengan statement fungsi fun1()
- 	 scanf(" %c", &input); 
-	Setelah itu, menggunakan kondisi jika input == T maka langsung di return 1
-	jika bukan T maka return 0
-	if (input == 'T') {
-  	  return 1;
-  	} else if (input == 'F') {
-	    return 0;
- 	 }
- 	 return 0;
-	}
-	Untuk fun2() 
-	int fun2() {
-  	printf("fun2 executed\n");
-  	return 1;
-	
-Pada fungsi utama akan di cek && menampilkan kondisi &&
-printf("Testing &&\n");
-  if (fun1() && fun2()) {
-    printf("Test of && complete\n");
-  }
-Dan untuk || menggunakan
-printf("Testing ||\n");
-  if (fun1() || fun2()) {
-    printf("Test of || complete\n");
-  }
+untuk mendapatkan input digunakan statement
+for (;;) {  		//digunakan for untuk mengulang kembali program tersebut
+    printf("\nEnter a number that you want to check: ");
+    if (scanf("%d",&n) != 1) break;  //jika input bukan bilakan maka program akan berhenti
+    if((n%2)==0)      // mengecek bilangfan itu genap
+      printf("%d is even.",n);
+  jika statemennya masih false maka akan memproses bilangan itu mjd ganjil
+   else
+      printf("%d is odd.",n);
 */
 #include <stdio.h>
+int main(void) {
+  int n;
 
-int fun1() {
-  char input;
-
-  scanf(" %c", &input);
-
-  if (input == 'T') {
-    return 1;
-  } else if (input == 'F') {
-    return 0;
+  for (;;) {  
+    printf("\nEnter a number that you want to check: ");		//dapat diisi banyak angka (lebih dari 1)
+    if (scanf("%d",&n) != 1) break;
+    if((n%2)==0)      
+      printf("%d is even.",n);
+    else
+      printf("%d is odd.",n);
   }
-
-  return 0;
-}
-
-int fun2() {
-  printf("fun2 executed\n");
-  return 1;
-}
-
-int main() {
-  printf("Testing &&\n");
-  if (fun1() && fun2()) {
-    printf("Test of && complete\n");
-  }
-
-  printf("Testing ||\n");
-  if (fun1() || fun2()) {
-    printf("Test of || complete\n");
-  }
-
   return 0;
 }

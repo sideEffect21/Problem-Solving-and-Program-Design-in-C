@@ -1,0 +1,53 @@
+Nama : Akmal Nafis
+NRP : 5025211216
+daspro E
+
+Programing project 
+Chapter 12 Programming in the Large
+
+no 3
+
+ Problem :
+	Banyak sistem rekayasa operasional memerlukan penjadwalan yang kompleks dari
+orang, mesin, dan perlengkapan untuk menyediakan layanan atau menghasilkan produk. Untuk menjadwalkan suatu sistem, seseorang perlu mengetahui tiga hal: Sumber daya
+tersedia untuk sistem, sumber daya yang dibutuhkan untuk menyediakan yang diinginkan
+layanan, dan setiap kendala pada sumber daya. Banyak algoritma canggih
+tersedia untuk meminimalkan biaya atau waktu yang diperlukan untuk menyediakan layanan. dikerjakan dengan modular project
+
+Analysis : 
+	Tulis program utama yang memanggil fungsi-fungsi 
+Write the following functions and create a scheduling library from them:
+a. A function to scan and store crew data in an appropriate structure.
+b. A function to scan and store in an appropriate structure the required 
+	maintenance data.
+c. A function that checks maintenance level required against the crew 
+	abilities and returns the number of the lowest-cost crew that can perform 
+	the maintenance.
+d. A function that checks the maintenance level required against the crew 
+	abilities and current schedule and returns the number of the qualified 
+	crew that will be free to perform the maintenance at the earliest time. If 
+	more than one crew satisfies the function’s constraints, the number of the 
+	lowest-cost qualified crew is returned.
+e.  A function that accumulates hours required for each crew as each maintenance task is scheduled.
+
+	penggunaan struct of array untuk menyimpan data kru dan level, setiap data banyak kru, level, level maintenance, upah perjam ,
+ 	waktu pengerjaan ,akan dibandingkan untuk jadwal yang sesuai dengan Asumsikan bahwa ketiga kru dapat bekerja pada waktu yang sama dan kru hanya dibayar ketika mereka bekerja. Pekerjaan harus dilakukan secara keseluruhan oleh satu kru. Kembangkan satu algoritme untuk menemukan cara tercepat 
+	untuk menyelesaikan pemeliharaan dan yang lainnya untuk menemukan cara termurah untuk menyelesaikan pekerjaan. 
+Problem Requirement :
+data crew dan level cost per jam
+sesuai daftar tabel kru dan biaya terendah untuk pemeliharaan dan lama proses
+
+
+
+ DESIGN
+ Initial Algorithm :
+	1. Meminta pengguna memasukkan banyak kru, data kru dan level cost per hour, 
+		Fungsi untuk memindai dan menyimpan data kru dalam struktur yang sesuai.
+	2. Meminta pengguna memasukkan banyak pekerjaan maintenance dan memasukkan id, level, dan estimated hour sesuai tabel
+		dibutuhkan Sebuah fungsi untuk memindai dan menyimpan dalam struktur yang sesuai data pemeliharaan yang diperlukan.
+	3. memeriksa crew yang diperlukan untuk mengatasi maintance sesuai dengan biaya dalam pemeliharaan dalam kru serta waktu yang dibutuhkan
+	4. Output berupa jadwal unruk menyelesaikan maintenace, dengan cost termurah dan waktu tercepat 
+
+
+Implementation menggunakan modular programing
+

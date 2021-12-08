@@ -1,0 +1,52 @@
+# Project: Project4
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o get_set.o "is\ element.o" is_empty.o is_set.o is_subset.o print_set.o print_with_commas.o set_union.o
+LINKOBJ  = main.o get_set.o "is element.o" is_empty.o is_set.o is_subset.o print_set.o print_with_commas.o set_union.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = modular.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+get_set.o: get_set.c
+	$(CC) -c get_set.c -o get_set.o $(CFLAGS)
+
+"is\ element.o": is\ element.c
+	$(CC) -c "is element.c" -o "is element.o" $(CFLAGS)
+
+is_empty.o: is_empty.c
+	$(CC) -c is_empty.c -o is_empty.o $(CFLAGS)
+
+is_set.o: is_set.c
+	$(CC) -c is_set.c -o is_set.o $(CFLAGS)
+
+is_subset.o: is_subset.c
+	$(CC) -c is_subset.c -o is_subset.o $(CFLAGS)
+
+print_set.o: print_set.c
+	$(CC) -c print_set.c -o print_set.o $(CFLAGS)
+
+print_with_commas.o: print_with_commas.c
+	$(CC) -c print_with_commas.c -o print_with_commas.o $(CFLAGS)
+
+set_union.o: set_union.c
+	$(CC) -c set_union.c -o set_union.o $(CFLAGS)

@@ -1,0 +1,103 @@
+Dibuat 16 November 2021
+NRP: 5025211216
+Nama : Akmal Nafis
+Kelas Daspro E
+
+
+sumber : Case study Operations on sets, hal 569.  Problem solving with Recursion
+Problem Solving and Program Design in C, Jeri R. Hanly - Elliot B. Koffman, 8th Edition, Global Edition-Pearson
+
+Problem:
+	Kembangkan sekelompok fungsi untuk melakukan (adalah elemen dari), (adalah bagian dari),
+dan (union) operasi pada set karakter. Juga, kembangkan fungsi untuk memeriksa itu
+set tertentu valid (yaitu, tidak mengandung karakter duplikat), untuk memeriksa
+himpunan kosong, dan untuk mencetak himpunan dalam notasi himpunan standar.
+pengerjaan menggunakan modular programing
+
+
+Analysis:
+		String karakter memberikan representasi set karakter yang cukup natural. Seperti set, 
+string bisa dari berbagai ukuran dan bisa kosong. Jika array karakter itu adalah untuk
+menahan sebuah set yang dinyatakan memiliki satu lebih banyak dari jumlah karakter dalam satu kesatuan.
+set versal (untuk memberikan ruang bagi karakter nol), maka operasi set tidak boleh
+menghasilkan string yang akan mengeluarkan array.
+
+Data Requirements:
+	input berupa huruf besar huruf kecil, dan 10 digit angka
+
+Design
+     Untuk menggunakan modular programing maka file disusun dengan nama yang sesuai dengan fungsi
+yang akan dipakai. terdapat  header untuk menyimpan fungsi dan kemuadian akan di panggil di main.c
+
+Algorithm for is_empty(set)
+1. Is initial character '\0'?
+
+Algorithm for is_element(ele, set)
+1. jika is_empty(set) /* simple case 1  */
+2. jawaban false.
+
+ else jika karakter awal set cocok dengan ele(men) /* simple case 2  */
+3. jawaban true.
+ else
+
+4. Jawabannya tergantung apakah ele ada di akhir set. /* recursive step  */
+
+Algorithm for is_set(set)
+1. jika is_empty(set) /* simple case 1  */
+2. jawaban is true.
+ else if is_element(initial set character,
+  rest of set) /* simple case 2  */
+3. jawaban false.
+ 
+else
+4.Jawabannya tergantung pada apakah sisa himpunan adalah himpunan yang valid. /* recursive step  */
+Algorithm for is_subset(sub, set)
+1.  is_empty(sub) /* simple case 1  */
+2. jawaban true.
+	 else if initial character of sub is not an element of set /* simple case 2  */
+3. jawaban false.
+	 else
+4.  Jawabannya tergantung pada apakah sisa sub adalah himpunan bagian dari himpunan. /* recursive step */
+
+Algorithm for union of set1 and set2
+1. if is_empty(set1) /* simple case  */
+2. Result is set2.
+ 	else if initial character of set1 is also an element
+	of set2 /* recursive steps */
+3. Result is the union of the rest of set1 with
+  	 set2.  /*   case 1    */
+ 	else  /*   case 2    */
+4. Hasil termasuk karakter awal set1 dan gabungan sisa set1 dengan set2.
+
+Algorithm for print_set(set)
+1. Output a {.
+2. jika set tidak habis, print elements sterpisah dari commas.
+3. Output a }.
+
+Algorithm for print_with_commas(set)
+1. if set has exactly one element
+2. Print it.
+ else
+3. Print initial element and a comma.
+4. print_with_commas the rest of set.
+
+Implementasi
+
+	Setiap fungsi rekursif dalam kumpulan fungsi dirancang referensi
+"sisa himpunan" untuk beberapa himpunan, yaitu, semua kecuali huruf pertama himpunan. di semua
+fungsi-fungsi ini, "sisa himpunan" ini dilewatkan sebagai argumen input saja—fungsi
+tion disebut melihatnya, tetapi tidak mengubahnya. Karena substring khusus ini termasuk
+semua karakter string asli dari titik awal substring benar
+
+	melalui karakter null string asli, kita dapat menggunakan &set[1] untuk mereferensikan
+sisa himpunan dengan program utama yang mendemonstrasikan fungsi.
+
+	set_union berfungsi membentuk gabungan dua himpunan adalah
+Dalam implementasi set_union, kita tidak dapat menggunakan hasil variabel sebagai
+argumen keluaran untuk panggilan ke set_union dan panggilan ke sprintf karena
+sprintf tidak menjamin hasil yang benar jika ada tumpang tindih antara inputnya dan
+argumen keluaran.
+
+Testing 
+	ketika dimasukkan input yang sama untuk menggabungkan, ditampilkan output yang sama.
+sama seperti halnya set yang kososng. hanya menampilkan {} jika di gabung
